@@ -47,6 +47,36 @@ end
 > vagrant up again
 - redo all the steps 
 - install nginx and load it in the browser 
+- `ls | tail -2`
 
+
+### Env Variables
+- how to check env variables `env` or `printenv key`
+- DB_HOST=database
+- we need to use `export key=value`
+- making env var persistent
+- how to make env var persistent in linux 
+
+### Reverse Proxy with Nginx
+- We have our node app listening on port 3000 and we would like it to be available on port 80 which is default port for browser 
+- 
+
+```
+server {
+    listen 80;
+
+    server_name _;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+```
 
 
