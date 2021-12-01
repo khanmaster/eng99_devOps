@@ -1,6 +1,7 @@
 # DevOps Intro
 ## Development Env
 
+![](images/dev-env.png)
 - Install vagrant
 - Install Ruby
 
@@ -57,6 +58,8 @@ end
 - making env var persistent
 - how to make env var persistent in linux 
 
+### Multi Machine with Node and MongoDB
+![](images/multi-machine.png)
 ### Reverse Proxy with Nginx
 - We have our node app listening on port 3000 and we would like it to be available on port 80 which is default port for browser 
 - 
